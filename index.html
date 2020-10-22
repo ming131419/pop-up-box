@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pop-up Box</title>
+</head>
+<body>
+<button onclick="pop()">弹出</button>
+<script src="index.js"></script>
+<script type="application/javascript">
+function pop() {
+// The example of confirm$ usage mode
+  pxu(null,
+    '安全校验',
+    '<input id="pxu" type="text" placeholder="请输入登录密码" />',
+    '取消',
+    '立即前往').then(res => {
+    console.log(res)
+  });
+}
+</script>
+</body>
+</html>
