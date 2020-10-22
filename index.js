@@ -200,8 +200,10 @@ window.pxu = (function (win, doc) {
           '</svg>'
       }
     };
-    self._box$.type = _icon_obj['type'];
     self._options$ = option;
+    self._box$.type = _icon_obj['type'][self._options$.type];
+    console.log(`self._box$.type : `, self._box$.type);
+    console.log(`self._options$.type : `, self._options$.type);
     // Create and additional html
     self._html$ = {
       popLayer: 'div',
@@ -434,6 +436,7 @@ window.pxu = (function (win, doc) {
   personalWindow.existOf = function (self, item, style) {
     let option = self._options$,
       box = self._box$;
+    console.log(`existOf: `, option, item, box);
     if (item && option[item]) {
       box[item].innerHTML = option[item];
       this.appendStyle({

@@ -5,16 +5,47 @@
     <title>Pop-up Box</title>
 </head>
 <body>
-<button onclick="pop()">弹出</button>
+<button onclick="promptBox()">prompt弹出框</button>
+<button onclick="confirmBox()">confirm弹出框</button>
+<button onclick="successBox()">success弹出框</button>
+<button onclick="restartBox()">restart弹出框</button>
 <script src="index.js"></script>
+<!--<script src="./dist/index.js"></script>-->
 <script type="application/javascript">
-function pop() {
+function promptBox() {
 // The example of confirm$ usage mode
   pxu(null,
     '安全校验',
     '<input id="pxu" type="text" placeholder="请输入登录密码" />',
     '取消',
-    '立即前往').then(res => {
+    '确定').then(res => {
+    console.log(res)
+  });
+}
+function confirmBox() {
+  pxu('warning',
+    null,
+    '您的操作存在风险，是否继续？',
+    '取消',
+    '确定').then(res => {
+    console.log(res)
+  });
+}
+function successBox() {
+  pxu('success',
+    null,
+    '您的操作存在风险，是否继续？',
+    '取消',
+    '确定').then(res => {
+    console.log(res)
+  });
+}
+function restartBox() {
+  pxu('restart',
+    '是否重启',
+    '您的操作存在风险，是否继续？',
+    '取消',
+    '确定').then(res => {
     console.log(res)
   });
 }
