@@ -438,7 +438,6 @@ window.pxu = (function (win, doc) {
   personalWindow.existOf = function (self, item, style, obj) {
     let option = self._options$,
       box = self._box$;
-    console.log(`box[item]: `, box[item]);
     if (item && option[item]) {
       box[item].innerHTML = obj || option[item];
       this.appendStyle({
@@ -495,35 +494,13 @@ window.pxu = (function (win, doc) {
    * @param obj json or obj in js
    */
   personalWindow.obj2css = function (obj) {
-    // return JSON.stringify(obj).trim()
-    //   .replace(/^\{|\"|\}$/g, '')
-    //   .replace(/\,/g, ';')
-    //   .replace(/\}/g, ';}')
-    //   .replace(/\:\{/g, '{')
-    //   .replace(/\}\;/g, '}')
-    //   .replace(/DOT/gi, ',');
-
-    let _css = JSON.stringify(obj).trim()
+    return JSON.stringify(obj).trim()
       .replace(/^\{|\"|\}$/g, '')
       .replace(/\,/g, ';')
       .replace(/\}/g, ';}')
       .replace(/\:\{/g, '{')
       .replace(/\}\;/g, '}')
       .replace(/DOT/gi, ',');
-    // let _css_ = JSON.stringify(obj).trim()
-    //   .replace(/^\{|\"|\}$/g, '')
-    //   .replace(/\,|\}|\:\{|\}\;|DOT/gi,  function (e) {
-    //   let rule = {
-    //     ',': ';',
-    //     '}': ';}',
-    //     ':{': '{',
-    //     '};': ','
-    //   };
-    //   return rule[e]
-    // });
-    // console.log(`new _css : `, _css);
-    // console.log(`new _css_ : `, _css_);
-    return _css;
   };
 
   /**
