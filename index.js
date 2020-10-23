@@ -12,7 +12,6 @@
  *    console.log(res)
  *  });
  */
-// TODO Packaging usual window pop-up box
 // TODO Add typescript .d.ts file
 // TODO Packaging npm install package
 window.pxu = (function (win, doc) {
@@ -218,8 +217,7 @@ window.pxu = (function (win, doc) {
     self._box$ = personalWindow.createBox(self._html$, doc.getElementsByTagName("body")[0]);
     self._box$.closeIcon.innerHTML = _icon_obj['close'];
     self._box$.des.innerText = self._options$.des;
-    self._box$.btnEnsure.innerText = self._options$.ensure;
-    self._box$.btnCancel.innerText = self._options$.cancel;
+    self._box$.btnEnsure.innerText = self._options$.btnEnsure;
     // Create and additional style
     self._style$ = personalWindow.createStyle(self, doc.documentElement.firstChild);
     self._box$ = personalWindow.variable2class(self._box$);
@@ -251,6 +249,18 @@ window.pxu = (function (win, doc) {
       "font-family": "MicrosoftYaHei",
       "color": "var(--default-font-color)",
       "line-height": "19px",
+    });
+
+    // Determined whether button cancel is exist
+    personalWindow.existOf(self, 'btnCancel', {
+      "padding": "6px 41px",
+      "border": "1px solid var(--btn-color)",
+      "border-radius": "5px",
+      "cursor": "pointer",
+      "outline": "none",
+      "margin-right": "30px",
+      "background-color": "var(--default-bg-color)",
+      "flex": "auto"
     });
 
     return new Promise((resolve, reject) => {
@@ -388,15 +398,7 @@ window.pxu = (function (win, doc) {
       [box.btnBox['class']]: {
         "flex": "0",
         "padding-bottom": "30px",
-        "align-self": "center"
-      },
-      [box.btnBox['class'] + " button"]: {
-        "padding": "6px 41px",
-        "background-color": "var(--default-bg-color)",
-        "border": "1px solid var(--btn-color)",
-        "border-radius": "5px",
-        "cursor": "pointer",
-        "outline": "none"
+        "align-self": "center",
       },
       [box.btnBox['class'] + " button:hover"]: {
         "opacity": "0.8"
@@ -405,9 +407,13 @@ window.pxu = (function (win, doc) {
         "border-color": "var(--btn-active-color)"
       },
       [box.btnBox['class'] + " button:last-of-type"]: {
-        "margin-left": "30px",
         "background-color": "var(--btn-color)",
-        "color": "var(--default-bg-color)"
+        "color": "var(--default-bg-color)",
+        "padding": "6px 41px",
+        "border": "1px solid var(--btn-color)",
+        "border-radius": "5px",
+        "cursor": "pointer",
+        "outline": "none",
       }
     };
     this._style$.innerText = this.obj2css(_default);
@@ -432,16 +438,14 @@ window.pxu = (function (win, doc) {
   personalWindow.existOf = function (self, item, style, obj) {
     let option = self._options$,
       box = self._box$;
-    console.log(`option: `, option);
-    console.log(`item: `, item);
-    console.log(`box: `, box);
-    console.log(`option[item]: `, option[item]);
     console.log(`box[item]: `, box[item]);
     if (item && option[item]) {
       box[item].innerHTML = obj || option[item];
       this.appendStyle({
         [box[item]['class']]: style
       })
+    } else {
+      box[item].remove();
     }
   };
 
@@ -459,6 +463,10 @@ window.pxu = (function (win, doc) {
     box.setAttribute('id', '_id_' + tagName);
     parentTag.appendChild(box);
     return box;
+  };
+
+  personalWindow.remove = function (selector) {
+    $(selector).remove();
   };
 
   /**
@@ -542,18 +550,18 @@ window.pxu = (function (win, doc) {
     return box
   };
 
-  return async function (type, title, des, cancel, ensure) {
+  return async function (type, title, des, btnCancel, btnEnsure) {
     type = type || ''; // window type. At present, only support warning\success\shutdown\restart
     title = title || ''; // pop title
     des = des || 'Hi！May I ask if you forgotten something？'; // confirm info
-    cancel = cancel || 'cancel'; // cancel button info
-    ensure = ensure || 'ensure'; // ensure button info
+    btnCancel = btnCancel || ''; // cancel button info
+    btnEnsure = btnEnsure || 'ensure'; // ensure button info
     return await personalWindow({
       type: type,
       title: title,
       des: des,
-      cancel: cancel,
-      ensure: ensure
+      btnCancel: btnCancel,
+      btnEnsure: btnEnsure
     })
   }
 })(window, document);
