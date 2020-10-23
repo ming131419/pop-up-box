@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A mini pop-up box plugin.",
   "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ming131419/pxu.git"
@@ -17,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/ming131419/pxu/issues"
   },
-  "homepage": "https://github.com/ming131419/pxu#readme-en"
+  "homepage": "https://github.com/ming131419/pxu#readme-en",
+  "dependencies": {
+    "webpack": "^5.2.0",
+    "webpack-cli": "^4.1.0"
+  }
 }
