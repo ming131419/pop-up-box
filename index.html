@@ -10,7 +10,6 @@
 <button onclick="successBox()">success弹出框</button>
 <button onclick="restartBox()">restart弹出框</button>
 <script src="index.js"></script>
-<!--<script src="./dist/index.js"></script>-->
 <script type="application/javascript">
 function promptBox() {
 // The example of confirm$ usage mode
@@ -22,6 +21,7 @@ function promptBox() {
     console.log(res)
   });
 }
+
 function confirmBox() {
   pxu('warning',
     null,
@@ -31,6 +31,7 @@ function confirmBox() {
     console.log(res)
   });
 }
+
 function successBox() {
   pxu('success',
     null,
@@ -40,6 +41,7 @@ function successBox() {
     console.log(res)
   });
 }
+
 function restartBox() {
   pxu('restart',
     '是否重启',
