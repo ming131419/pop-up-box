@@ -1,6 +1,6 @@
 {
   "name": "pop-up-box",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A mini pop-up box plugin.",
   "main": "index.js",
   "repository": {
