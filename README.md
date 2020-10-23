@@ -28,15 +28,4 @@
 ```
 
 ## 效果
-
-基本样式：
-![基本样式](./image/base.jpg)
-
-仿prompt：
-![仿prompt](./image/prompt.jpg)
-
-仿alert：
-![仿alert](./image/alert.jpg)
-
-仿confirm：
-![仿alert](./image/confirm.jpg)
+如果您想看效果图，请切换dev分支进行查看

@@ -29,15 +29,4 @@ NO2、By downloading the JS plug-in
 ```
 
 ## Result
-
-base style：
-![base](./image/base.jpg)
-
-mock prompt：
-![仿prompt](./image/prompt.jpg)
-
-mock alert：
-![mock alert](./image/alert.jpg)
-
-mock confirm：
-![mock alert](./image/confirm.jpg)
+If you want to see effect img, you can switch dev to see
