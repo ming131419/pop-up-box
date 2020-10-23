@@ -13,7 +13,6 @@
  *  });
  */
 // TODO Add typescript .d.ts file
-// TODO Packaging npm install package
 window.pxu = (function (win, doc) {
 
   /**
@@ -553,9 +552,9 @@ window.pxu = (function (win, doc) {
   return async function (type, title, des, btnCancel, btnEnsure) {
     type = type || ''; // window type. At present, only support warning\success\shutdown\restart
     title = title || ''; // pop title
-    des = des || 'Hi！May I ask if you forgotten something？'; // confirm info
+    des = des || ''; // confirm info
     btnCancel = btnCancel || ''; // cancel button info
-    btnEnsure = btnEnsure || 'ensure'; // ensure button info
+    btnEnsure = btnEnsure || '确定'; // ensure button info
     return await personalWindow({
       type: type,
       title: title,
@@ -565,3 +564,5 @@ window.pxu = (function (win, doc) {
     })
   }
 })(window, document);
+
+module.exports = window.pxu;
