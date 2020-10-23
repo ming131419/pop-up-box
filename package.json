@@ -16,14 +16,14 @@
     "pop-up",
     "mini"
   ],
-  "author": "Ming",
+  "author": "chenzm",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ming131419/pop-up-box/issues"
   },
   "homepage": "https://github.com/ming131419/pop-up-box#readme",
   "dependencies": {
-    "webpack": "^5.1.3"
+    "webpack": "^5.2.0"
   },
   "devDependencies": {
     "webpack-cli": "^4.1.0"
