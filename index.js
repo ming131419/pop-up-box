@@ -19,21 +19,20 @@ window.pxu = (function (win, doc) {
 
   /**
    * Quickly selector
-   * TODO Optimized selector. At present only support a single element.
    * @param selector
    */
   let $ = function (selector) {
-    let t = selector.trim().substring(0, 1);
-    let el = selector.trim().substring(1, Infinity);
-    let type = {
-      '.': function (el) {
-        return doc.getElementsByClassName(el);
-      },
-      '#': function (el) {
-        return doc.getElementById(el);
-      }
-    };
-    return type[t](el)
+    // let t = selector.trim().substring(0, 1);
+    // let el = selector.trim().substring(1, Infinity);
+    // let type = {
+    //   '.': function (el) {
+    //     return doc.getElementsByClassName(el);
+    //   },
+    //   '#': function (el) {
+    //     return doc.getElementById(el);
+    //   }
+    // };
+    return doc.querySelector(selector) || null
   };
 
   /**
@@ -201,9 +200,6 @@ window.pxu = (function (win, doc) {
       }
     };
     self._options$ = option;
-    self._box$.type = _icon_obj['type'][self._options$.type];
-    console.log(`self._box$.type : `, self._box$.type);
-    console.log(`self._options$.type : `, self._options$.type);
     // Create and additional html
     self._html$ = {
       popLayer: 'div',
@@ -233,7 +229,7 @@ window.pxu = (function (win, doc) {
     personalWindow.existOf(self, 'type', {
       "flex": "0",
       "align-self": "center"
-    });
+    }, _icon_obj['type'][self._options$.type]);
 
     // Determined whether title is exist
     personalWindow.existOf(self, 'title', {
@@ -260,15 +256,15 @@ window.pxu = (function (win, doc) {
     return new Promise((resolve, reject) => {
       personalWindow.on(self._box$.closeIcon, 'click', function () {
         resolve(null);
+        personalWindow.removeAll();
       }, false);
       personalWindow.on(self._box$.btnCancel, 'click', function () {
-        personalWindow.removeAll();
         resolve(false);
+        personalWindow.removeAll();
       }, false);
       personalWindow.on(self._box$.btnEnsure, 'click', function () {
-        let v = $("#pxu")['value'];
+        resolve($("#pxu") && $("#pxu")['value'] || true);
         personalWindow.removeAll();
-        resolve(v ? v : true);
       }, false);
     })
   }
@@ -433,12 +429,16 @@ window.pxu = (function (win, doc) {
    * @param style
    * @private
    */
-  personalWindow.existOf = function (self, item, style) {
+  personalWindow.existOf = function (self, item, style, obj) {
     let option = self._options$,
       box = self._box$;
-    console.log(`existOf: `, option, item, box);
+    console.log(`option: `, option);
+    console.log(`item: `, item);
+    console.log(`box: `, box);
+    console.log(`option[item]: `, option[item]);
+    console.log(`box[item]: `, box[item]);
     if (item && option[item]) {
-      box[item].innerHTML = option[item];
+      box[item].innerHTML = obj || option[item];
       this.appendStyle({
         [box[item]['class']]: style
       })
