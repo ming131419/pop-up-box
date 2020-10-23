@@ -7,6 +7,9 @@ At present, we provide two import modes for small masters:
 NO1、Install the plug-in via `npm install pxu`
 
 NO2、By downloading the JS plug-in
+> The js plugin can only be downloaded from the Clone Github repository or directly copied from the contents of the `index.js` file in the current project
+>
+> If you are not interested in the source code, you can switch to the dev branch and download or copy the `index.js` in the `dist` folder.
 
 ## Usage
 ```
@@ -29,4 +32,4 @@ NO2、By downloading the JS plug-in
 ```
 
 ## Result
-If you want to see effect img, you can switch dev to see
+If you want to see effect img, you can **switch dev** to see
