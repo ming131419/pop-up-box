@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ming131419/pop-up-box.git"
+    "url": "git+https://github.com/ming131419/pxu.git"
   },
   "keywords": [
     "plugin",
@@ -19,9 +19,9 @@
   "author": "chenzm",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ming131419/pop-up-box/issues"
+    "url": "https://github.com/ming131419/pxu/issues"
   },
-  "homepage": "https://github.com/ming131419/pop-up-box#readme",
+  "homepage": "https://github.com/ming131419/pxu#readme-en",
   "dependencies": {
     "webpack": "^5.2.0"
   },
