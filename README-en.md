@@ -15,8 +15,8 @@ NO2、By downloading the JS plug-in
 ```
  * The example of confirm$ usage mode
  * pxu($1, $2, $3, $4, $5)
- * $1 : represents the `type` of pop-up box(icon), can be isn't exist
- * $2 : represents the `title` of pop-up box, can be isn't exist
+ * $1 : represents the `type` of pop-up box(icon)
+ * $2 : represents the `title` of pop-up box
  * $3 : represents the `description` of pop-up box.The description can be html
  *      but must had `id="pxu"` attribute in input html.Example:
  *      <input id="pxu" type="text" placeholder="Please enter your login password" style="..." />
