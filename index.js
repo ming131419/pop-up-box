@@ -236,7 +236,7 @@ window.pxu = (function (win, doc) {
       "font-family": "PingFangSC-Regular DOT PingFang SC",
       "font-weight": "600",
       "color": "#232323",
-      "padding-top": "15px"
+      "padding": "10px 50px",
     });
 
     // Determined whether des is exist
@@ -248,6 +248,7 @@ window.pxu = (function (win, doc) {
       "font-family": "MicrosoftYaHei",
       "color": "var(--default-font-color)",
       "line-height": "19px",
+      "padding": "10px 50px",
     });
 
     // Determined whether button cancel is exist
