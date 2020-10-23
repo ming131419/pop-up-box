@@ -4,7 +4,7 @@
   "description": "A mini pop-up box plugin.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "bulid": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

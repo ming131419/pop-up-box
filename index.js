@@ -565,5 +565,3 @@ window.pxu = (function (win, doc) {
     })
   }
 })(window, document);
-
-module.exports = window.pxu;
