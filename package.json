@@ -4,8 +4,7 @@
   "description": "A mini pop-up box plugin.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,11 +20,5 @@
   "bugs": {
     "url": "https://github.com/ming131419/pxu/issues"
   },
-  "homepage": "https://github.com/ming131419/pxu#readme-en",
-  "dependencies": {
-    "webpack": "^5.2.0"
-  },
-  "devDependencies": {
-    "webpack-cli": "^4.1.0"
-  }
+  "homepage": "https://github.com/ming131419/pxu#readme-en"
 }
