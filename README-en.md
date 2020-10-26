@@ -32,4 +32,4 @@ NO2、By downloading the JS plug-in
 ```
 
 ## Result
-If you want to see effect img, you can **switch dev** to see
+If you want to see effect img, you can [**switch dev**](https://github.com/ming131419/pxu/tree/dev) to see
